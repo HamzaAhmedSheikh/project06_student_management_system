@@ -2,6 +2,7 @@
   "name": "project06_student_management_system",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "repository": "https://github.com/HamzaAhmedSheikh/project06_student_management_system.git",
   "author": "HamzaAhmedSheikh <hamzaahmedsheikh313@gmail.com>",
   "license": "MIT",
