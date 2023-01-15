@@ -293,11 +293,15 @@ const updatePassword = async () => {
         },
     ])
 
-    console.log("answer: ", answer);
-    console.log("studentData.password: ", studentData.password);
+    console.log("");    
+   
+    console.log(`${chalk.green.bold(`your old password is: ${studentData.password}`)}`);
+    
+    console.log("")
 
     if (answer.oldPassword !== studentData.password) {
-        console.log("Password not matched with old password");
+        console.log(`${chalk.red.bold(`Password not matched with old password`)}`);
+        console.log("");
     }
     else if (answer.newPassword !== answer.confimredNewPassword) {
         console.log("Confirmed password not matched with new password");

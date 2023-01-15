@@ -13,7 +13,7 @@ export type InstructorInput = {
 
 export const coursesList = [
     {
-        course_code: "01MD",
+        course_code: "01WMD",
         course_name: "Meraverse Development",
         description: "Meraverse Development",
         instructor: "Zia Khan",
