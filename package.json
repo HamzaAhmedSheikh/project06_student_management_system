@@ -1,11 +1,14 @@
 {
-  "name": "student_management_system",
+  "name": "project06_sms",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",  
+  "type": "module",
+  "bin": {
+    "sms": "lib/index.js"
+  },
   "repository": "https://github.com/HamzaAhmedSheikh/project06_student_management_system.git",
-  "author": "HamzaAhmedSheikh <hamzaahmedsheikh313@gmail.com>",
-  "license": "MIT",  
+  "author": "HamzaAhmedSheikh",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.2.0",
     "chalk-animation": "^2.0.3",

@@ -5,7 +5,13 @@ import { Course } from "./Course.js";
 import PIAIC_SMS from "./SMS.js";
 import { Student } from "./Student.js";
 
-import { coursesList, instructorsList } from './types.js'
+import { coursesList, instructorsList } from './types.js';
+
+import chalk from "chalk";
+import chalkAnimation from "chalk-animation";
+import figlet from "figlet";
+import gradient from "gradient-string";
+
 
 let studentData: Student | undefined;
 let quit = false;
@@ -26,10 +32,21 @@ const updatingComponent = async (msg: string) => {
     }
 }
 
-const welcomeMsg = () => {
+const welcome = () => {
     console.log("");
-    console.log("Welcome to", PIAIC_SMS.name + "\n");
+    // console.log("Welcome to", PIAIC_SMS.name + "\n");
+    console.log(gradient.pastel.multiline(figlet.textSync(`${PIAIC_SMS.name}`)))
+
+    console.log('\n');
+    console.log(
+        `
+        ${chalk.cyan.bold(`Welcome to our ${PIAIC_SMS.name}`)}
+        
+        `
+    );
 }
+
+welcome()
 
 const loggedInWelcomMsg = () => {
     console.log("");
@@ -39,7 +56,7 @@ const loggedInWelcomMsg = () => {
         console.clear();
         console.log("Welcome to PIAIC Student Management System");
         console.log("");
-        console.table([
+        console.table([ 
             {
                 "First_Name": studentData?.first_name,
                 "Last_Name": studentData?.last_name,
@@ -53,7 +70,7 @@ const loggedInWelcomMsg = () => {
 
 const handleLoggedOutUser = async () => {
 
-    welcomeMsg();
+    // welcomeMsg();
 
     const answers = await inquirer.prompt([
         {
@@ -153,10 +170,12 @@ const handleLogin = async () => {
 
 const handleQuit = () => {
     quit = true;
+
+    console.log("");
+    console.log("Thank you for using our student management system.");    
+    console.log("");        
     console.log("Bye. See you later")
 }
-
-await handleLoggedOutUser()
 
 /**************************** Student Profile *******************************************/
 
